@@ -52,7 +52,7 @@
             <!--spingMVC的配置路径  -->
             <param-value>classpath:config/springmvc/spring-mvc.xml</param-value>
         </init-param>
-        <load-on-startup>1</load-on-startup>
+        <load-on-startup>2</load-on-startup>
     </servlet>
     <!-- 拦截设置 -->
     <servlet-mapping>

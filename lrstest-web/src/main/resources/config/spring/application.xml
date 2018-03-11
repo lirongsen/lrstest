@@ -16,7 +16,9 @@ http://www.springframework.org/schema/aop
 http://www.springframework.org/schema/aop/spring-aop.xsd">
 
 	<!-- 指定spring注解注入层 -->
-	<context:component-scan base-package="com.lrs" />
+	<context:component-scan base-package="com.lrs" >
+		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller" />
+	</context:component-scan>
 	<bean id="propertyConfigurer"
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 		<property name="locations">
