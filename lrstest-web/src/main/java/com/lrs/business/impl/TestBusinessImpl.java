@@ -23,7 +23,7 @@ public class TestBusinessImpl implements TestBusiness {
 	public void insert(Test test) {
 		testMapper.insert(test);
 
-		throw new RuntimeException();
+		//throw new RuntimeException();
 		
 	}
 
