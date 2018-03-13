@@ -7,4 +7,6 @@ public interface TestService {
 	Test test(String id);
 	
 	void insertTest(Test test);
+	
+	Test testRedis(Test test);
 }

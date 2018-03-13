@@ -25,8 +25,8 @@ public class LoginController {
 		Test test = new Test();
 		test.setId(userLoginId);
 		test.setName(userLoginId);
-		serivce.insertTest(test);
-		result.put("isLogin", test.getName());
+		Test t = serivce.testRedis(test);
+		result.put("isLogin", t.getName());
 		return result;
 	}
 }

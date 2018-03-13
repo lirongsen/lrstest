@@ -6,12 +6,16 @@ import org.springframework.stereotype.Repository;
 import com.lrs.bean.po.Test;
 import com.lrs.business.TestBusiness;
 import com.lrs.dao.TestMapper;
+import com.lrs.util.RedisUtil;
 
 @Repository
 public class TestBusinessImpl implements TestBusiness {
 	
 	@Autowired
 	private TestMapper testMapper;
+	
+	@Autowired
+	private RedisUtil redisUtil;
 	
 	@Override
 	public Test select(String key) {
@@ -25,6 +29,17 @@ public class TestBusinessImpl implements TestBusiness {
 
 		//throw new RuntimeException();
 		
+	}
+
+	@Override
+	public void insertRedis(String key, Test value) {
+		redisUtil.set(key, value);
+		
+	}
+
+	@Override
+	public Test selectRedis(String key) {
+		return redisUtil.get(key, Test.class);
 	}
 
 }

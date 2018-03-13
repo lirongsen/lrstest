@@ -26,4 +26,10 @@ public class TestServiceImpl implements TestService {
 		testBusiness.insert(test);
 	}
 
+	@Override
+	public Test testRedis(Test test) {
+		testBusiness.insertRedis("aaa", test);
+		return testBusiness.selectRedis("aaa");
+	}
+
 }

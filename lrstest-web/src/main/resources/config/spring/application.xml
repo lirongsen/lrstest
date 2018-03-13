@@ -31,6 +31,9 @@ http://www.springframework.org/schema/aop/spring-aop.xsd">
 	<!-- 数据库配置 -->
 	<import resource="classpath*:config/mybatis/*.xml" /> 
 	
+	<!-- redis配置 -->
+	<import resource="classpath*:config/redis/*.xml" /> 
+	
 	<!-- 配置RestTemplate -->
     <!--Http client Factory -->
     <bean id="httpClientFactory"
